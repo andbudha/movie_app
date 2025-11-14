@@ -62,6 +62,20 @@ const _Layout = () => {
         }}
       />
       <Tabs.Screen
+        name="search"
+        options={{
+          headerShown: true,
+          title: "Search",
+          tabBarIcon: ({ focused }) => (
+            <TabButtonStyles
+              focused={focused}
+              icon={icons.search}
+              title="Search"
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="saved"
         options={{
           headerShown: true,
@@ -85,20 +99,6 @@ const _Layout = () => {
               focused={focused}
               icon={icons.person}
               title="Profile"
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="search"
-        options={{
-          headerShown: true,
-          title: "Search",
-          tabBarIcon: ({ focused }) => (
-            <TabButtonStyles
-              focused={focused}
-              icon={icons.search}
-              title="Search"
             />
           ),
         }}
