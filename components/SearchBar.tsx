@@ -8,7 +8,7 @@ interface SearchBarProps {
 }
 const SearchBar = ({ onPress, placeHolder }: SearchBarProps) => {
   return (
-    <View className="flex-row items-center bg-dark-200 rounded-full px-5 py-4 ">
+    <View className="flex-row items-center bg-[#302C48] rounded-full px-5 py-4 ">
       <Image
         source={icons.search}
         className="size-5"

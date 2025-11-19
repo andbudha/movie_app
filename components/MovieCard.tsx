@@ -14,7 +14,7 @@ const MovieCard = ({
 
   return (
     <Link href={`/movies/${id}`} asChild>
-      <TouchableOpacity className="w-32 mr-3 mb-3">
+      <TouchableOpacity className="w-32 mr-2 mb-3">
         {poster_path ? (
           <Image
             source={{
@@ -32,15 +32,6 @@ const MovieCard = ({
             />
           </View>
         )}
-        {/* <Image
-          source={{
-            uri: poster_path
-              ? `https://image.tmdb.org/t/p/w500${poster_path}`
-              : `https://placehold.co/600*400/1a1a1a/#fff.png`,
-          }}
-          className="w-full h-52 rounded-lg"
-          resizeMode="cover"
-        /> */}
         <Text
           className="text-white mt-2 text-sm font-semibold"
           numberOfLines={1}
