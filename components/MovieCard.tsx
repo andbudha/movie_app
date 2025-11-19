@@ -10,11 +10,9 @@ const MovieCard = ({
   release_date,
   vote_average,
 }: Movie) => {
-  console.log(poster_path);
-
   return (
     <Link href={`/movies/${id}`} asChild>
-      <TouchableOpacity className="w-32 mr-2 mb-3">
+      <TouchableOpacity className="w-32  mb-3">
         {poster_path ? (
           <Image
             source={{
