@@ -39,7 +39,9 @@ export default function Index() {
             className="mt-10 self-center"
           />
         ) : moviesError ? (
-          <Text>Error: {moviesError.message}</Text>
+          <Text className="text-red-500 flex-1 text-center px-5 my-3">
+            Error: {moviesError.message}
+          </Text>
         ) : (
           <View className="flex-1 mt-5">
             <SearchBar
@@ -62,7 +64,7 @@ export default function Index() {
                 columnWrapperStyle={{
                   justifyContent: "flex-start",
                   gap: 20,
-                  paddingRight: 5,
+                  marginVertical: 16,
                   marginBottom: 10,
                 }}
                 className="mt-3 pb-32"
