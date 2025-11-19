@@ -39,7 +39,7 @@ const _Layout = () => {
           alignItems: "center",
         },
         tabBarStyle: {
-          backgroundColor: "#0f0D23",
+          backgroundColor: "#302C48",
           borderRadius: 50,
           marginHorizontal: 10,
           marginBottom: 36,
@@ -64,8 +64,7 @@ const _Layout = () => {
       <Tabs.Screen
         name="search"
         options={{
-          headerShown: true,
-          title: "Search",
+          headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabButtonStyles
               focused={focused}
