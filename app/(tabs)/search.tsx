@@ -3,6 +3,7 @@ import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { fetchMovies } from "@/services/api";
+import { updateSearchCount } from "@/services/appwrite";
 import useFetch from "@/services/useFetch";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
@@ -16,15 +17,19 @@ const Search = () => {
     fetchData: refetchMovies,
     reset,
   } = useFetch(() => fetchMovies({ query: searchQuery }), false);
+  console.log("Home Page:::", movies?.results);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (searchQuery.trim()) {
         refetchMovies();
+        if (movies?.results.length > 0 && movies?.results[0]) {
+          updateSearchCount(searchQuery, movies?.results[0]);
+        }
       } else {
         reset();
       }
-    }, 600); // Debounce time of 600ms
+    }, 700); // Debounce time of 600ms
 
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
