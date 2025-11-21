@@ -39,7 +39,7 @@ const MovieCard = ({
         <View className="flex-row items-center justify-start gap-1">
           <Image source={icons.star} className="size-5" />
           <Text className="text-white font-bold text-xs">
-            {Math.round(vote_average / 2)}
+            {vote_average && Math.round(vote_average / 2)} / 5
           </Text>
         </View>
         <View className="flex-row items-center justify-between">

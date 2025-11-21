@@ -17,7 +17,6 @@ const Search = () => {
     fetchData: refetchMovies,
     reset,
   } = useFetch(() => fetchMovies({ query: searchQuery }), false);
-  console.log("Home Page:::", movies?.results);
 
   useEffect(() => {
     const timeoutId = setTimeout(async () => {
