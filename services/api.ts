@@ -26,7 +26,7 @@ export const fetchMovies = async ({ query }: { query: string }) => {
 };
 
 export const fetchMovieById = async (
-  movieId: number
+  movieId: string
 ): Promise<MovieDetails> => {
   try {
     const endpoint = `${TMDB_CONFIG.BASE_URL}/movie/${movieId}?api_key=${TMDB_CONFIG.API_KEY}`;
