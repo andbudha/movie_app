@@ -20,12 +20,9 @@ const Search = () => {
   console.log("Home Page:::", movies?.results);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
-        refetchMovies();
-        if (movies?.results.length > 0 && movies?.results[0]) {
-          updateSearchCount(searchQuery, movies?.results[0]);
-        }
+        await refetchMovies();
       } else {
         reset();
       }
@@ -33,6 +30,12 @@ const Search = () => {
 
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (movies?.results.length > 0 && movies?.results[0]) {
+      updateSearchCount(searchQuery, movies?.results[0]);
+    }
+  }, [movies]);
 
   return (
     <View className="flex-1 bg-primary w-full">
