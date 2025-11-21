@@ -24,6 +24,7 @@ export default function Index() {
     loading: trendingLoading,
     error: trendingError,
   } = useFetch(getTrendingMovies);
+
   const {
     data: movies,
     loading: moviesLoading,
@@ -55,7 +56,7 @@ export default function Index() {
               onPress={() => router.push("/search")}
               placeHolder="Search for a movie"
             />
-            {trendingMovies && (
+            {trendingMovies && trendingMovies.length > 0 && (
               <>
                 <Text className="text-lg text-white font-bold mt-8 mb-3">
                   Top 10 Trending Movies
@@ -64,9 +65,9 @@ export default function Index() {
                   horizontal
                   ItemSeparatorComponent={() => <View className="w-4" />}
                   className="mb-4 mt-3"
-                  data={trendingMovies.slice(0, 10)}
+                  data={trendingMovies?.slice(0, 10)}
                   renderItem={({ item, index }) => (
-                    <TrendingCard movie={item} index={index} />
+                    <TrendingCard trendingMovie={item} index={index} />
                   )}
                   keyExtractor={(item) => item.movie_id.toString()}
                 />

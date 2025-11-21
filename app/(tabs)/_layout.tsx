@@ -77,7 +77,7 @@ const _Layout = () => {
       <Tabs.Screen
         name="saved"
         options={{
-          headerShown: true,
+          headerShown: false,
           title: "Saved",
           tabBarIcon: ({ focused }) => (
             <TabButtonStyles
@@ -91,7 +91,7 @@ const _Layout = () => {
       <Tabs.Screen
         name="profile"
         options={{
-          headerShown: true,
+          headerShown: false,
           title: "Profile",
           tabBarIcon: ({ focused }) => (
             <TabButtonStyles
